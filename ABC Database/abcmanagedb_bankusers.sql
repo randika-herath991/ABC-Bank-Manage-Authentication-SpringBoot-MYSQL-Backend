@@ -31,10 +31,11 @@ CREATE TABLE `bankusers` (
   `password` varchar(45) NOT NULL,
   `type` varchar(1) NOT NULL,
   `isActive` tinyint(1) DEFAULT '1',
-  `userImage` longblob,
+  `userImage` longblob NOT NULL,
   PRIMARY KEY (`uId`),
-  UNIQUE KEY `UserEmail_UNIQUE` (`userEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `UserEmail_UNIQUE` (`userEmail`),
+  UNIQUE KEY `password_UNIQUE` (`password`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-18 11:24:45
+-- Dump completed on 2025-02-27 21:32:10
